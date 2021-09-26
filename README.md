@@ -194,6 +194,15 @@ $ sudo service apache2 restart
 
 # Vue
 
+git clone 받은후 프로젝트 최 상단 위치에 .env.local 파일 생성
+
+```bash
+# .env.local
+VUE_APP_SERVER_URL='http://52.69.127.109:80'
+```
+
+
+
 - nginx 설치
 
 ```bash
