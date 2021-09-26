@@ -13,6 +13,8 @@
 <script>
 import axios from 'axios'
 
+const SERVER_URL = process.env.VUE_APP_SERVER_URL
+
 export default {
   name: 'TodoList',
   data: function () {
@@ -31,7 +33,8 @@ export default {
     getTodos: function () {
       axios({
         method: 'get',
-        url: 'http://127.0.0.1:8000/todos/',
+        // url: 'http://127.0.0.1:8000/todos/',
+        url: `${SERVER_URL}/todos/`,
         headers: this.setToken()
       })
         .then((res) => {

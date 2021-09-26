@@ -8,6 +8,8 @@
 <script>
 import axios from'axios'
 
+const SERVER_URL = process.env.VUE_APP_SERVER_URL
+
 export default {
   name: 'CreateTodo',
   data: function () {
@@ -31,7 +33,8 @@ export default {
       if (todoItem.title) {
         axios({
           method: 'post',
-          url: 'http://127.0.0.1:8000/todos/',
+          // url: 'http://127.0.0.1:8000/todos/',
+          url: `${SERVER_URL}/todos/`,
           data: todoItem,
           headers: this.setToken()
         })
