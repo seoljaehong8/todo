@@ -48,7 +48,8 @@ export default {
     deleteTodo: function (todo) {
       axios({
         method: 'delete',
-        url: `http://127.0.0.1:8000/todos/${todo.id}/`,
+        // url: `http://127.0.0.1:8000/todos/${todo.id}/`,
+        url: `${SERVER_URL}/todos/${todo.id}/`,
         headers: this.setToken()
       })
         .then((res) => {
@@ -67,7 +68,8 @@ export default {
 
       axios({
         method: 'put',
-        url: `http://127.0.0.1:8000/todos/${todo.id}/`,
+        // url: `http://127.0.0.1:8000/todos/${todo.id}/`,
+        url: `${SERVER_URL}/todos/${todo.id}/`,
         data: todoItem,
         headers: this.setToken(),
       })
