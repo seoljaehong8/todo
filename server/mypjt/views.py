@@ -1,5 +1,5 @@
 from rest_framework import status
-from rest_framework.response import Response
+from django.http import HttpResponse
 
 def index(request):
-    return Response({'success : 성공!!'},status=status.HTTP_200_SUCCESS)
+    return HttpResponse(status=200)
