@@ -34,7 +34,7 @@ export default {
       axios({
         method: 'get',
         // url: 'http://127.0.0.1:8000/todos/',
-        url: `${SERVER_URL}/todos/`,
+        url: `${SERVER_URL}/api/todos/`,
         headers: this.setToken()
       })
         .then((res) => {
@@ -49,7 +49,7 @@ export default {
       axios({
         method: 'delete',
         // url: `http://127.0.0.1:8000/todos/${todo.id}/`,
-        url: `${SERVER_URL}/todos/${todo.id}/`,
+        url: `${SERVER_URL}/api/todos/${todo.id}/`,
         headers: this.setToken()
       })
         .then((res) => {
@@ -69,7 +69,7 @@ export default {
       axios({
         method: 'put',
         // url: `http://127.0.0.1:8000/todos/${todo.id}/`,
-        url: `${SERVER_URL}/todos/${todo.id}/`,
+        url: `${SERVER_URL}/api/todos/${todo.id}/`,
         data: todoItem,
         headers: this.setToken(),
       })
