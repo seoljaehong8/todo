@@ -156,6 +156,7 @@ mysql> flush privileges;
 
 # 밑에 설치로 안되면 그다음 설치할 것
 $ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+$ pip install mysql-client
 
 $ sudo aptinstall libmysqlclient-dev
 $ sudo apt install python3-mysqldb
