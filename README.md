@@ -189,6 +189,13 @@ $ python3 -m manage migrate
 $ sudo service apache2 restart
 ```
 
+- mysql 외부 접속 허용
+
+```bash
+# sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+bin-address 127.0.0.1 앞에 #추가 해서 주석처리
+```
+
 
 
 
