@@ -34,7 +34,7 @@ export default {
         axios({
           method: 'post',
           // url: 'http://127.0.0.1:8000/todos/',
-          url: `${SERVER_URL}/api/todos/`,
+          url: `${SERVER_URL}/todos/`,
           data: todoItem,
           headers: this.setToken()
         })
