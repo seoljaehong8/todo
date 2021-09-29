@@ -39,6 +39,7 @@ export default {
         .then(res => {
           console.log(res)
           localStorage.setItem('jwt', res.data.token)
+          sessionStorage.setItem('session','this is session storage item')
           this.$emit('login')
           this.$router.push({ name: 'TodoList' })
         })

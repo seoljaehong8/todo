@@ -190,6 +190,20 @@ $ sudo service apache2 restart
 
 
 
+- ec2에 mysql 설치 후 외부접속 허용
+
+```bash
+# /etc/mysql/mysql.conf.d/mysqld.cnf
+
+
+#bind-address           = 127.0.0.1		# 주석추가
+mysqlx-bind-address     = 127.0.0.1
+
+
+```
+
+
+
 
 
 # Vue
