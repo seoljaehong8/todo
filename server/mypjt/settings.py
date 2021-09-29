@@ -103,7 +103,7 @@ DATABASES = {
         'USER':'jaehong',
         'PASSWORD':'woghd2816',
         # 'HOST':'database-1.cxgaxmvbweba.us-east-1.rds.amazonaws.com',
-        'HOST':'10.0.0.185',
+        'HOST':'54.248.100.118',
         'PORT':'3306',
         'OPTIONS':{
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
