@@ -156,6 +156,7 @@ mysql> flush privileges;
 
 # 밑에 설치로 안되면 그다음 설치할 것
 $ sudo apt-get install python3-dev default-libmysqlclient-dev build-essential
+$ pip install mysql-client
 
 $ sudo aptinstall libmysqlclient-dev
 $ sudo apt install python3-mysqldb
@@ -186,6 +187,13 @@ DATABASES = {
 ```bash
 $ python3 -m manage migrate
 $ sudo service apache2 restart
+```
+
+- mysql 외부 접속 허용
+
+```bash
+# sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+bin-address 127.0.0.1 앞에 #추가 해서 주석처리
 ```
 
 
