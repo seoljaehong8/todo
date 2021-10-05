@@ -18,8 +18,8 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
+    path('ok/', views.index),
     path('admin/', admin.site.urls),
     path('todos/', include('todos.urls')),
     path('accounts/', include('accounts.urls')),
-    path('', views.index),
 ]
