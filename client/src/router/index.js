@@ -4,6 +4,7 @@ import TodoList from '@/views/todos/TodoList'
 import CreateTodo from '@/views/todos/CreateTodo'
 import Signup from '@/views/accounts/Signup'
 import Login from '@/views/accounts/Login'
+import Ok from '@/views/todos/Ok'
 
 Vue.use(VueRouter)
 
@@ -17,6 +18,11 @@ const routes = [
     path: '/todos/create',
     name: 'CreateTodo',
     component: CreateTodo,
+  },
+  {
+    path: '/todos/Ok',
+    name: 'Ok',
+    component: Ok,
   },
   {
     path: '/accounts/signup',

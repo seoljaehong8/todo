@@ -7,7 +7,7 @@
     </div>
     <div>
       <label for="password">비밀번호: </label>
-      <input type="password" id="password" v-model="credentials.password">
+      <input type="password" id="password" v-model="credentials.password" @keydown.enter="login">
     </div>
     <button @click="login">로그인</button>
   </div>
@@ -39,6 +39,7 @@ export default {
         .then(res => {
           console.log(res)
           localStorage.setItem('jwt', res.data.token)
+          localStorage.setItem('username', this.credentials.username)
           sessionStorage.setItem('session','this is session storage item')
           this.$emit('login')
           this.$router.push({ name: 'TodoList' })

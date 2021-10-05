@@ -1,7 +1,8 @@
 <template>
   <div>
-    <ul>
-      <li v-for="(todo, idx) in todos" :key="idx">
+    <ul class="ulbox">
+      <h1>{{username}}'s todo list</h1>
+      <li class="libox" v-for="(todo, idx) in todos" :key="idx">
         <span @click="updateTodoStatus(todo)" :class="{ completed: todo.completed }">{{ todo.title }}</span>
         <button @click="deleteTodo(todo)" class="todo-btn">X</button>
       </li>
@@ -20,6 +21,11 @@ export default {
   data: function () {
     return {
       todos: null,
+    }
+  },
+  computed: {
+    username() {
+      return localStorage.getItem('username')
     }
   },
   methods: {
@@ -95,7 +101,26 @@ export default {
   }
 
   .completed {
-    text-decoration: line-through;
-    color: rgb(112, 112, 112);
+    text-decoration: line-through;    
+    color: rgb(134, 134, 134);
+    font-weight: bold;
+  }
+
+  .ulbox{
+    box-shadow: 0px 0px 30px 1px rgb(141, 240, 157);
+    border-radius: 5px;
+    width: 600px;
+    margin: 0 auto;
+    padding:1px 5px 10px 10px;
+  }
+
+  .libox{
+    margin:10px 0;
+    list-style: none;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  .libox:hover{
+    cursor: pointer;
   }
 </style>

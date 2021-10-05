@@ -2,6 +2,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,django,python,venv,node,vuejs,vue,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,django,python,venv,node,vuejs,vue,visualstudiocode
 
+*.zip
+
 ### Django ###
 *.log
 *.pot
