@@ -24,7 +24,7 @@ export default {
     axios({
         method: 'get',
         // url: 'http://127.0.0.1:8000/todos/',
-        url: `${SERVER_URL}/ok/`,
+        url: `${SERVER_URL}/health/`,
     })
     .then((res) => {
         this.content = res.data     

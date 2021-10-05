@@ -5,7 +5,7 @@
         <router-link :to="{ name: 'TodoList' }">Todo List</router-link> | 
         <router-link :to="{ name: 'CreateTodo' }">Create Todo</router-link> |
         <router-link @click.native="logout" to="#">Logout</router-link> |
-        <router-link :to="{ name: 'Ok'}">Ok</router-link>
+        <router-link :to="{ name: 'health'}">health</router-link>
         
       </span>
       <span v-else>
