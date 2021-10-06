@@ -5,6 +5,8 @@ pipeline {
             steps{
                 sh 'aws --version'
                 sh 'aws s3 ls'
+                sh 'pwd'
+                sh 'ls -al'
                 
             }
         }
