@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('delete origin zip file'){
             steps{
+                sh 'cd server'
                 sh 'rm -rf beanstalk-deploy.zip'
             }
         }
