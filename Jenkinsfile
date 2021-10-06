@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('git pull '){
             steps{
+		sh 'git config --list'
                 sh 'git pull origin master' 
             }
         }
