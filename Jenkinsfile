@@ -7,6 +7,7 @@ pipeline {
 		sh 'pwd'
 		sh 'ls -l'
 		sh 'python3 -V'
+		sh 'python3 -m pip install awsebcli'
 		sh 'sudo eb --version' 
 		sh 'git config --list'
                 sh 'git pull origin master' 
