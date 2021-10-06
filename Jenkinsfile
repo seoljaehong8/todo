@@ -6,7 +6,7 @@ pipeline {
                 sh 'rm -rf beanstalk-deploy.zip'
             }
         }
-        stages('make zip file'){
+        stage('make zip file'){
             steps{
                 sh 'zip beanstalk-deploy.zip ./*'
             }
