@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('git pull'){
+        stage('git pull '){
             steps{
                 sh 'git pull origin2 master' 
             }
