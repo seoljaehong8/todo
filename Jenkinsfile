@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git pull '){
             steps{
-                sh 'git pull origin2 master' 
+                sh 'git pull origin master' 
             }
         }
         stage('eb deploy'){
