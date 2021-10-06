@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('git pull '){
             steps{
-                sh 'git pull origin2 master' 
+                sh 'aws --version'
+                
             }
         }
         stage('eb deploy'){
