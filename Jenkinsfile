@@ -3,6 +3,8 @@ pipeline {
     stages {
         stage('git pull '){
             steps{
+		sh 'whoami'
+		sh 'pwd'
 		sh 'sudo /home/ec2-user/.local/bin/eb --version' 
 		sh 'git config --list'
                 sh 'git pull origin master' 
