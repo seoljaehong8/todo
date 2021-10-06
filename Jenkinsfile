@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git pull '){
             steps{
-		sh 'eb --version'
+		sh '/home/ec2-user/.local/bin/eb --version' 
 		sh 'git config --list'
                 sh 'git pull origin master' 
             }
