@@ -4,7 +4,7 @@ pipeline {
         stage('git pull '){
             steps{
                 sh 'aws --version'
-                sh 'ls -al'
+                sh 'aws s3 ls'
                 
             }
         }
