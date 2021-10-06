@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('delete origin zip file'){
             steps{
-                sh 'cd server && ls -al'
+                sh 'cd server && ls -al && rm -rf *.zip'
             }
         }
         stage('make zip file'){
             steps{
-                sh 'cd server && zip beanstalk_${BUILD_NUMBER}.zip ./.'
+                sh 'cd server && zip -r beanstalk_${BUILD_NUMBER}.zip .'
             }
         }
         stage('upload to S3'){
