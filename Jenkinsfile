@@ -19,7 +19,7 @@ pipeline {
         }
         stage('deploy'){
             steps{
-                sh 'aws elasticbeanstalk create-application-version --region ap-northeast-1 --application-name django-tutorial --version-label from_s3_awscli --source-bundle S3Bucket="elasticbeanstalk-ap-northeast-1-090274807648",S3Key="beanstalk_${BUILD_NUMBER}.zip"'
+                sh 'aws elasticbeanstalk create-application-version --region ap-northeast-1 --application-name django-tutorial --version-label beanstalk_${BUILD_NUMBER} --source-bundle S3Bucket="elasticbeanstalk-ap-northeast-1-090274807648",S3Key="beanstalk_${BUILD_NUMBER}.zip"'
                 sh 'aws elasticbeanstalk update-environment --region ap-northeast-1 --environment-name django-env --version-label beanstalk_${BUILD_NUMBER}'
             }
         }        
