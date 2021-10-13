@@ -7,6 +7,8 @@ from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 
+from django.shortcuts import render
+
 from .serializers import TodoSerializer
 from .models import Todo
 
@@ -52,3 +54,6 @@ def todo_update_delete(request, todo_pk):
     elif request.method == 'DELETE':
         todo.delete()
         return Response({ 'id': todo_pk }, status=status.HTTP_204_NO_CONTENT)
+
+def beanstalk(request):
+    return render(request, 'beanstalk.html',{'msg':'hello world'})
