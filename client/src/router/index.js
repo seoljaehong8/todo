@@ -5,10 +5,16 @@ import CreateTodo from '@/views/todos/CreateTodo'
 import Signup from '@/views/accounts/Signup'
 import Login from '@/views/accounts/Login'
 import health from '@/views/todos/health'
+import CheckSession from '@/views/session/CheckSession'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/checkSession',
+    name: 'CheckSession',
+    component: CheckSession,
+  },
   {
     path: '/todos',
     name: 'TodoList',

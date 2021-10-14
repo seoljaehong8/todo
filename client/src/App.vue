@@ -5,7 +5,9 @@
         <router-link :to="{ name: 'TodoList' }">Todo List</router-link> | 
         <router-link :to="{ name: 'CreateTodo' }">Create Todo</router-link> |
         <router-link @click.native="logout" to="#">Logout</router-link> |
-        <router-link :to="{ name: 'health'}">health</router-link>
+        <router-link :to="{ name: 'health'}">health</router-link> |
+        <router-link :to="{ name: 'CheckSession'}">checkSession</router-link>
+
         
       </span>
       <span v-else>
@@ -30,12 +32,16 @@ export default {
       this.isLogin = false
       localStorage.removeItem('jwt')
       this.$router.push({ name: 'Login' })
-    }
+    }    
   },
   created: function () {
     const token = localStorage.getItem('jwt')
     if (token) {
       this.isLogin = true
+      this.$router.push({ name : 'TodoList' })
+    }
+    else{
+      this.$router.push({ name: 'Login' })
     }
   }
 }

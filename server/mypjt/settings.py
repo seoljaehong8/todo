@@ -161,3 +161,5 @@ AUTH_USER_MODEL = 'accounts.User'
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
 }
+
+SESSION_SAVE_EVERY_REQUEST = True

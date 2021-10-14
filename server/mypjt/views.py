@@ -4,6 +4,3 @@ from django.shortcuts import render
 
 def index(request):
     return HttpResponse({'ok123'},status=200)
-
-def beanstalk(request):
-    return render (request, 'beanstalk.html')

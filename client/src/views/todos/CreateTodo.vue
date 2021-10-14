@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" v-model.trim="title" @keyup.enter="createTodo">
-    <button @click="createTodo">+</button>
+    <button @click="createTodo" class='button'>추가</button>
   </div>
 </template>
 
@@ -50,3 +50,22 @@ export default {
   }
 }
 </script>
+<style scoped>
+.button{
+  margin-left:8px;
+  font-size:16px;
+  background-color: rgb(64, 167, 43);
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-style: none;
+  color:white;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: rgb(98, 206, 77);
+}
+input{
+  width:200px;
+  height:20px;
+}
+</style>
