@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1>checkSession</h1>
+        <h1>cache : {{cacheText}}</h1>
+
     </div>
 </template>
 
@@ -13,8 +14,7 @@ export default {
   name: 'CheckSession',
   data: function () {
     return {
-      sessionId: '',
-      sessionValue: '',
+      cacheText: '',
     }
   },
   created: function() {
@@ -24,8 +24,7 @@ export default {
       })
       .then(res=>{
           console.log(res.data)
-          this.sessionId = res.data.session_id
-          this.sessionValue = res.data.test
+          this.cacheText = res.data.cache
       })
       .catch(err=>{
           console.log(err)

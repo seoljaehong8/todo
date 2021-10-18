@@ -27,6 +27,7 @@ export default {
         url: `${SERVER_URL}/health/`,
     })
     .then((res) => {
+        console.log(res.data)
         this.content = res.data     
     })
     .catch((err) => {
