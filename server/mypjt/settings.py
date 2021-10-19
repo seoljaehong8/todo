@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'rest_framework',
     # django cors
     'corsheaders',
+    # redis
+    'django_redis',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     # django cors middleware setting
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -66,7 +68,7 @@ MIDDLEWARE = [
 # ]
 
 # 2. 모든 Origin 허용
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'mypjt.urls'
 
@@ -88,6 +90,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mypjt.wsgi.application'
 
+# CACHE
+CACHES = {
+    'default' : {
+        'BACKEND' : 'django_redis.cache.RedisCache',
+        'LOCATION': [
+            'redis://beanstalk-redis-ro.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379',
+            'redis://beanstalk-redis.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379'
+        ],
+        'OPTIONS' : {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+        'MASTER_CACHE': 'redis://beanstalk-redis-ro.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379'        
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -103,7 +119,7 @@ DATABASES = {
         'USER':'jaehong',
         'PASSWORD':'woghd2816',
         # 'HOST':'database-1.cxgaxmvbweba.us-east-1.rds.amazonaws.com',
-        'HOST':'54.248.100.118',
+        'HOST':'my-rds-mysql.c6ymajozlbl7.ap-northeast-1.rds.amazonaws.com',
         'PORT':'3306',
         'OPTIONS':{
             'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",

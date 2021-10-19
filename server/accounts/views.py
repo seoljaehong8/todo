@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import UserSerializer
+from django.core.cache import cache
 
 
 @api_view(['POST'])
@@ -29,12 +30,20 @@ def signup(request):
 
 @api_view(['GET'])
 def checkSession(request):
-    print(request.session.items())
-    print('22222222222222 : ',request.session['test'])
-    test = request.session['test']
+    get_redis = cache.get('test')
 
-    contents = {
-        'test': test
+    print(get_redis)
+
+    if not get_redis:
+        cache.set('test','no cache data in here')
+
+    get_redis = cache.get('test')
+
+    print(cache.get('test'))
+
+    context = {
+        'cache' : get_redis
     }
-    return Response(contents)
+
+    return Response(context)
 
