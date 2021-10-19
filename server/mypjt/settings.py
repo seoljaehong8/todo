@@ -95,13 +95,13 @@ CACHES = {
     'default' : {
         'BACKEND' : 'django_redis.cache.RedisCache',
         'LOCATION': [
-            'redis://beanstalk-redis-ro.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379',
-            'redis://beanstalk-redis.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379'
+            'redis://my-redis-ro.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379/',
+            'redis://my-redis.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379/'
         ],
         'OPTIONS' : {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'MASTER_CACHE': 'my-redis-ro.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379/'        
         },
-        'MASTER_CACHE': 'redis://beanstalk-redis-ro.mhlh2c.ng.0001.apne1.cache.amazonaws.com:6379'        
     }
 }
 

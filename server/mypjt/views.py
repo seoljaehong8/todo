@@ -6,9 +6,11 @@ from django.core.cache import cache
 
 def index(request):   
 
-    cache.set('test','from elasticache redis',timeout=10)
+    cache.set('key','hello',timeout=10)
+    print('1111111111111111111111111111111111111111111111111111111111111111111111111')
 
-    print(cache.get('test'))
+    print(cache.get('key'))
 
+    print('2222222222222222222222222222222222222222222222222222222222222222222222222')
 
     return HttpResponse({'make data in elasticache redis'},status=200)
